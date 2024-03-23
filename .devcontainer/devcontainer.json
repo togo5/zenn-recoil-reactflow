@@ -1,0 +1,7 @@
+{
+	"name": "zenn-recoil-reactflow",
+	"build": {
+		"context": "..",
+		"dockerfile": "Dockerfile"
+	}
+}

@@ -27,9 +27,13 @@ export const useFlowStore = () => {
   return {
     nodes: useRecoilValue(nodesState),
     edges: useRecoilValue(edgesState),
-    onConnect: useRecoilCallback(({ set }) => (connection: Connection) => {
-      set(edgesState, (edges) => addEdge(connection, edges))
-    }),
+    onConnect: useRecoilCallback(
+      ({ set }) =>
+        (connection: Connection) => {
+          set(edgesState, (edges) => addEdge(connection, edges))
+        },
+      []
+    ),
     onNodesChange: useRecoilCallback(
       ({ set }) =>
         (changes: NodeChange[]) => {
